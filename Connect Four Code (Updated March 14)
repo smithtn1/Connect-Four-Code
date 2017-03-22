@@ -1000,7 +1000,7 @@ def game_loop():
     #pygame.mixer.music.play(1)
     
     
-    
+    turn = 1
     
     
     x2 = 0
@@ -1292,21 +1292,27 @@ def game_loop():
 
     winTextR = font3.render("Red Wins!", 1, red)
     winTextposR = (725, 500)
+
+    redtext = font3.render("Red", 1, red)
+    rtextpos = (680,40)
+
+    yeltext = font3.render("Yellow", 1, yellow)
+    ytextpos = (840,40)
     
     text = font.render("Welcome to Connect Four!", 1, black)
     textpos = (643, 0)
     
     text1 = font1.render("Player 1 is Red!", 1, black)
-    textpos1 = (643, 40)
+    textpos1 = (643, 90)
     
     text2 = font1.render("Player 2 is Yellow!", 1, black)
-    textpos2 = (840, 40)    
+    textpos2 = (810, 90)    
     
-    text3 = font1.render("Red goes first!", 1, black)
-    textpos3 = (643, 70)
+    text3 = font1.render("Red is numbers 1 - 7!", 1, black)
+    textpos3 = (643, 120)
     
-    text4 = font1.render("Yellow goes second!", 1, black)
-    textpos4 = (840, 70)
+    text4 = font1.render("Yellow is letters Q - U!", 1, black)
+    textpos4 = (810, 120)
     
     text5 = font1.render("1-7 is Red!", 1, black)
     textpos5 = (643, 100)
@@ -1349,6 +1355,8 @@ def game_loop():
     gameDisplay.blit(text2, textpos2)
     gameDisplay.blit(text3, textpos3)
     gameDisplay.blit(text4, textpos4)
+    gameDisplay.blit(redtext, rtextpos)
+    gameDisplay.blit(yeltext, ytextpos)
     #gameDisplay.blit(text5, textpos5)
     #gameDisplay.blit(text6, textpos6)
     
@@ -1379,21 +1387,13 @@ def game_loop():
     
     gameDisplay.blit(text14,textpos14)
     gameDisplay.blit(text15,textpos15)
-
-
-    def win(name,delay):
-        t.sleep(delay)
-        
-        gameDisplay.blit(text14,textpos10)
-        t.sleep(delay)
-        #game_loop()
         
         
     
     
     while not gameExit:
 
-        
+
         for R in superRed:
             for lis in R:
                 for x in range(len(lis)-3):
@@ -1418,11 +1418,13 @@ def game_loop():
                 gameExit = True           
                 
             if event.type == pygame.KEYDOWN:
-                
+
+                print(pygame.mouse.get_pos())
                 #RED COMMANDS
                 #RED COMMANDS
                 
                 if event.key == pygame.K_1:
+                    turn = 0
                     if redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 0:
                         redlist1[5] = 1
                         redV1[5] = 1
@@ -1469,6 +1471,7 @@ def game_loop():
                         
 #                            
                 elif event.key == pygame.K_2:
+                    turn = 0
                     if redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 0:
                         redlist2[5] = 1
                         redV2[5] = 1
@@ -1508,6 +1511,7 @@ def game_loop():
                     
                     
                 elif event.key == pygame.K_3:
+                    turn = 0
                     if redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 0:
                         redlist3[5] = 1
                         redV3[5] = 1
@@ -1549,6 +1553,7 @@ def game_loop():
                     
                 
                 elif event.key == pygame.K_4:
+                    turn = 0
                     if redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 0:
                         redlist4[5] = 1
                         redV4[5] = 1
@@ -1588,6 +1593,7 @@ def game_loop():
                     
                     
                 elif event.key == pygame.K_5:
+                    turn = 0
                     if redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 0:
                         redlist5[5] = 1
                         redV5[5] = 1
@@ -1626,6 +1632,7 @@ def game_loop():
                         break 
                     
                 elif event.key == pygame.K_6:
+                    turn = 0
                     if redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 0:
                         redlist6[5] = 1
                         redV6[5] = 1
@@ -1664,6 +1671,7 @@ def game_loop():
                         break
                    
                 elif event.key == pygame.K_7:
+                    turn = 0
                     if redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 0:
                         redlist7[5] = 1
                         redV7[5] = 1
@@ -1708,6 +1716,7 @@ def game_loop():
                 #YELLOW COMMANDS
                     
                 if event.key == pygame.K_q:
+                    turn = 1
                     if redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 0:
                         redlist1[5] = 1
                         yelV1[5] = 1
@@ -1750,6 +1759,7 @@ def game_loop():
                         
 #                            
                 elif event.key == pygame.K_w:
+                    turn = 1
                     if redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 0:
                         redlist2[5] = 1
                         yelV2[5] = 1
@@ -1789,6 +1799,7 @@ def game_loop():
                     
                     
                 elif event.key == pygame.K_e:
+                    turn = 1
                     if redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 0:
                         redlist3[5] = 1
                         yelV3[5] = 1
@@ -1830,6 +1841,7 @@ def game_loop():
                     
                 
                 elif event.key == pygame.K_r:
+                    turn = 1
                     if redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 0:
                         redlist4[5] = 1
                         yelV4[5] = 1
@@ -1869,6 +1881,7 @@ def game_loop():
                     
                     
                 elif event.key == pygame.K_t:
+                    turn = 1
                     if redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 0:
                         redlist5[5] = 1
                         yelV5[5] = 1
@@ -1907,6 +1920,7 @@ def game_loop():
                         break 
                     
                 elif event.key == pygame.K_y:
+                    turn = 1
                     if redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 0:
                         redlist6[5] = 1
                         yelV6[5] = 1
@@ -1945,6 +1959,7 @@ def game_loop():
                         break
                    
                 elif event.key == pygame.K_u:
+                    turn = 1
                     if redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 0:
                         redlist7[5] = 1
                         yelV7[5] = 1
@@ -1979,7 +1994,7 @@ def game_loop():
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 5:
                         redlist7[0] = 1
                         yelV7[0] = 1
-                        yelH1[6] = 1                            
+                        yelH1[6] = 1                  
                         gameDisplay.blit(Yellow,(565,20))
                         break
                     
@@ -2000,4 +2015,3 @@ def game_loop():
         
 game_loop()    
 pygame.quit()
-
