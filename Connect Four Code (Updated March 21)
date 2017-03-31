@@ -1427,6 +1427,7 @@ def game_loop():
                     turn = 0
                     if redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 0:
                         redlist1[5] = 1
+                        redP3[0] = 1
                         redV1[5] = 1
                         redH6[0] = 1
                         
@@ -1434,6 +1435,7 @@ def game_loop():
                         break                            
                     elif redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 1:
                         redlist1[4] = 1
+                        redP2[0] = 1
                         redV1[4] = 1
                         redH5[0] = 1
                         
@@ -1441,6 +1443,8 @@ def game_loop():
                         break
                     elif redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 2:
                         redlist1[3] = 1
+                        redP1[0] = 1
+                        yelP1[0] = 1
                         redV1[3] = 1
                         redH4[0] = 1
                         
@@ -1449,18 +1453,21 @@ def game_loop():
                     elif redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 3:
                         redlist1[2] = 1
                         redV1[2] = 1
+                        redN1[0] = 1
                         redH3[0] = 1
                         
                         thread.start_new_thread(twoThreadRed1, ('b',.5))
                         break 
                     elif redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 4:
                         redlist1[1] = 1
+                        redN2[0] = 1
                         redV1[1] = 1
                         redH2[0] = 1
                         thread.start_new_thread(oneThreadRed1, ('b',.5))
                         break
                     elif redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 5:
                         redlist1[0] = 1
+                        redN3[0] = 1
                         redV1[0] = 1
                         redH1[0] = 1
                         gameDisplay.blit(Red,(25,20))
@@ -1474,6 +1481,7 @@ def game_loop():
                     turn = 0
                     if redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 0:
                         redlist2[5] = 1
+                        redP4[0] = 1
                         redV2[5] = 1
                         redH6[1] = 1
                         thread.start_new_thread(allThreadRed2, ('how',.5))
@@ -1481,29 +1489,36 @@ def game_loop():
                     elif redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 1:
                         redlist2[4] = 1
                         redV2[4] = 1
+                        redP3[1] = 1
                         redH5[1] = 1
                         thread.start_new_thread(fourThreadRed2, ('um',.5))
                         break
                     elif redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 2:
                         redlist2[3] = 1
+                        redP2[1] = 1
+                        redN1[1] = 1
                         redV2[3] = 1
                         redH4[1] = 1
                         thread.start_new_thread(threeThreadRed2, ('a',.5))
                         break
                     elif redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 3:
                         redlist2[2] = 1
+                        redP1[1] = 1
+                        redN2[1] = 1
                         redV2[2] = 1
                         redH3[1] = 1
                         thread.start_new_thread(twoThreadRed2, ('b',.5))
                         break 
                     elif redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 4:
                         redlist2[1] = 1
+                        redN3[1] = 1
                         redV2[1] = 1
                         redH2[1] = 1
                         thread.start_new_thread(oneThreadRed2, ('b',.5))
                         break
                     elif redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 5:
                         redlist2[0] = 1
+                        redN4[0] = 1
                         redV2[0] = 1
                         redH1[1] = 1
                         gameDisplay.blit(Red,(115,20))
@@ -1514,18 +1529,23 @@ def game_loop():
                     turn = 0
                     if redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 0:
                         redlist3[5] = 1
+                        redP5[0] = 1
                         redV3[5] = 1
                         redH6[2] = 1
                         thread.start_new_thread(allThreadRed3, ('how',.5))
                         break                            
                     elif redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 1:
                         redlist3[4] = 1
+                        redP4[1] = 1
+                        redN1[2] = 1
                         redV3[4] = 1
                         redH5[2] = 1
                         thread.start_new_thread(fourThreadRed3, ('um',.5))
                         break
                     elif redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 2:
                         redlist3[3] = 1
+                        redP3[2] = 1
+                        redN2[2] = 1
                         redV3[3] = 1
                         redH4[2] = 1
                         thread.start_new_thread(threeThreadRed3, ('a',.5))
@@ -1533,17 +1553,22 @@ def game_loop():
                     elif redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 3:
                         redlist3[2] = 1
                         redV3[2] = 1
+                        redP2[2] = 1
+                        redN3[2] = 1
                         redH3[2] = 1
                         thread.start_new_thread(twoThreadRed3, ('b',.5))
                         break 
                     elif redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 4:
                         redlist3[1] = 1
+                        redP1[2] = 1
+                        redN4[1] = 1
                         redV3[1] = 1
                         redH2[2] = 1
                         thread.start_new_thread(oneThreadRed3, ('b',.5))
                         break
                     elif redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 5:
                         redlist3[0] = 1
+                        redN5[0] = 1
                         redV3[0] = 1
                         redH1[2] = 1
                         gameDisplay.blit(Red,(205,20))
@@ -1556,36 +1581,48 @@ def game_loop():
                     turn = 0
                     if redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 0:
                         redlist4[5] = 1
+                        redP6[0] = 1
+                        redN1[3] = 1
                         redV4[5] = 1
                         redH6[3] = 1
                         thread.start_new_thread(allThreadRed4, ('how',.5))
                         break                            
                     elif redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 1:
                         redlist4[4] = 1
+                        redP5[1] = 1
+                        redN2[3] = 1
                         redV4[4] = 1
                         redH5[3] = 1
                         thread.start_new_thread(fourThreadRed4, ('um',.5))
                         break
                     elif redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 2:
                         redlist4[3] = 1
+                        redP4[2] = 1
+                        redN3[3] = 1
                         redV4[3] = 1
                         redH4[3] = 1
                         thread.start_new_thread(threeThreadRed4, ('a',.5))
                         break
                     elif redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 3:
                         redlist4[2] = 1
+                        redP3[3] = 1
+                        redN4[2] = 1
                         redV4[2] = 1
                         redH3[3] = 1
                         thread.start_new_thread(twoThreadRed4, ('b',.5))
                         break 
                     elif redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 4:
                         redlist4[1] = 1
+                        redP2[3] = 1
+                        redN5[1] = 1
                         redV4[1] = 1
                         redH2[3] = 1
                         thread.start_new_thread(oneThreadRed4, ('b',.5))
                         break
                     elif redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 5:
                         redlist4[0] = 1
+                        redP1[3] = 1
+                        redN6[0] = 1
                         redV4[0] = 1
                         redH1[3] = 1
                         gameDisplay.blit(Red,(295,20))
@@ -1596,36 +1633,46 @@ def game_loop():
                     turn = 0
                     if redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 0:
                         redlist5[5] = 1
+                        redN2[4] = 1
                         redV5[5] = 1
                         redH6[4] = 1
                         thread.start_new_thread(allThreadRed5, ('how',.5))
                         break                            
                     elif redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 1:
                         redlist5[4] = 1
+                        redP6[1] = 1
+                        redN3[4] = 1
                         redV5[4] = 1
                         redH5[4] = 1
                         thread.start_new_thread(fourThreadRed5, ('um',.5))
                         break
                     elif redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 2:
                         redlist5[3] = 1
+                        redP5[2] = 1
+                        redN4[3] = 1
                         redV5[3] = 1
                         redH4[4] = 1
                         thread.start_new_thread(threeThreadRed5, ('a',.5))
                         break
                     elif redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 3:
                         redlist5[2] = 1
+                        redP4[3] = 1
+                        redN5[2] = 1
                         redV5[2] = 1
                         redH3[4] = 1
                         thread.start_new_thread(twoThreadRed5, ('b',.5))
                         break 
                     elif redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 4:
                         redlist5[1] = 1
+                        redP3[4] = 1
+                        redN6[1] = 1
                         redV5[1] = 1
                         redH2[4] = 1
                         thread.start_new_thread(oneThreadRed5, ('b',.5))
                         break
                     elif redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 5:
                         redlist5[0] = 1
+                        redP2[4] = 1
                         redV5[0] = 1
                         redH1[4] = 1
                         gameDisplay.blit(Red,(385,20))
@@ -1635,36 +1682,44 @@ def game_loop():
                     turn = 0
                     if redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 0:
                         redlist6[5] = 1
+                        redN3[5] = 1
                         redV6[5] = 1
                         redH6[5] = 1
                         thread.start_new_thread(allThreadRed6, ('how',.5))
                         break                            
                     elif redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 1:
                         redlist6[4] = 1
+                        redN4[4] = 1
                         redV6[4] = 1
                         redH5[5] = 1
                         thread.start_new_thread(fourThreadRed6, ('um',.5))
                         break
                     elif redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 2:
                         redlist6[3] = 1
+                        redP6[2] = 1
+                        redN5[3] = 1
                         redV6[3] = 1
                         redH4[5] = 1
                         thread.start_new_thread(threeThreadRed6, ('a',.5))
                         break
                     elif redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 3:
                         redlist6[2] = 1
+                        redP5[3] = 1
+                        redN6[2] = 1
                         redV6[2] = 1
                         redH3[5] = 1
                         thread.start_new_thread(twoThreadRed6, ('b',.5))
                         break 
                     elif redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 4:
                         redlist6[1] = 1
+                        redP4[4] = 1
                         redV6[1] = 1
                         redH2[5] = 1
                         thread.start_new_thread(oneThreadRed6, ('b',.5))
                         break
                     elif redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 5:
                         redlist6[0] = 1
+                        redP3[5] = 1
                         redV6[0] = 1
                         redH1[5] = 1
                         gameDisplay.blit(Red,(475,20))
@@ -1674,36 +1729,42 @@ def game_loop():
                     turn = 0
                     if redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 0:
                         redlist7[5] = 1
+                        redN4[5] = 1
                         redV7[5] = 1
                         redH6[6] = 1
                         thread.start_new_thread(allThreadRed7, ('how',.5))
                         break                            
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 1:
                         redlist7[4] = 1
+                        redN5[4] = 1
                         redV7[4] = 1
                         redH5[6] = 1
                         thread.start_new_thread(fourThreadRed7, ('um',.5))
                         break
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 2:
                         redlist7[3] = 1
+                        redN6[3] = 1
                         redV7[3] = 1
                         redH4[6] = 1
                         thread.start_new_thread(threeThreadRed7, ('a',.5))
                         break
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 3:
                         redlist7[2] = 1
+                        redP6[3] = 1
                         redV7[2] = 1
                         redH3[6] = 1
                         thread.start_new_thread(twoThreadRed7, ('b',.5))
                         break 
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 4:
                         redlist7[1] = 1
+                        redP5[4] = 1
                         redV7[1] = 1
                         redH2[6] = 1
                         thread.start_new_thread(oneThreadRed7, ('b',.5))
                         break
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 5:
                         redlist7[0] = 1
+                        redP4[5] = 1
                         redV7[0] = 1
                         redH1[6] = 1
                         gameDisplay.blit(Red,(565,20))
@@ -1719,36 +1780,42 @@ def game_loop():
                     turn = 1
                     if redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 0:
                         redlist1[5] = 1
+                        yelP3[0] = 1
                         yelV1[5] = 1
                         yelH6[0] = 1
                         thread.start_new_thread(allThreadYel1, ('how',.5))
                         break                            
                     elif redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 1:
                         redlist1[4] = 1
+                        yelP2[0] = 1
                         yelV1[4] = 1
                         yelH5[0] = 1
                         thread.start_new_thread(fourThreadYel1, ('um',.5))
                         break
                     elif redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 2:
                         redlist1[3] = 1
+                        yelP1[0] = 1
                         yelV1[3] = 1
                         yelH4[0] = 1
                         thread.start_new_thread(threeThreadYel1, ('a',.5))
                         break
                     elif redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 3:
                         redlist1[2] = 1
+                        yelN1[0] = 1
                         yelV1[2] = 1
                         yelH3[0] = 1
                         thread.start_new_thread(twoThreadYel1, ('b',.5))
                         break 
                     elif redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 4:
                         redlist1[1] = 1
+                        yelN2[0] = 1
                         yelV1[1] = 1
                         yelH2[0] = 1
                         thread.start_new_thread(oneThreadYel1, ('b',.5))
                         break
                     elif redlist1[0] + redlist1[1] + redlist1[2] + redlist1[3] + redlist1[4] + redlist1[5] == 5:
                         redlist1[0] = 1
+                        yelN3[0] = 1
                         yelV1[0] = 1
                         yelH1[0] = 1
                         gameDisplay.blit(Yellow,(25,20))
@@ -1762,36 +1829,44 @@ def game_loop():
                     turn = 1
                     if redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 0:
                         redlist2[5] = 1
+                        yelP4[0] = 1
                         yelV2[5] = 1
                         yelH6[1] = 1
                         thread.start_new_thread(allThreadYel2, ('how',.5))
                         break                            
                     elif redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 1:
                         redlist2[4] = 1
+                        yelP3[1] = 1
                         yelV2[4] = 1
                         yelH5[1] = 1
                         thread.start_new_thread(fourThreadYel2, ('um',.5))
                         break
                     elif redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 2:
                         redlist2[3] = 1
+                        yelP2[1] = 1
+                        yelN1[1] = 1
                         yelV2[3] = 1
                         yelH4[1] = 1
                         thread.start_new_thread(threeThreadYel2, ('a',.5))
                         break
                     elif redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 3:
                         redlist2[2] = 1
+                        yelP1[1] = 1
+                        yelN2[1] = 1
                         yelV2[2] = 1
                         yelH3[1] = 1                            
                         thread.start_new_thread(twoThreadYel2, ('b',.5))
                         break 
                     elif redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 4:
                         redlist2[1] = 1
+                        yelN3[1] = 1
                         yelV2[1] = 1
                         yelH2[1] = 1                            
                         thread.start_new_thread(oneThreadYel2, ('b',.5))
                         break
                     elif redlist2[0] + redlist2[1] + redlist2[2] + redlist2[3] + redlist2[4] + redlist2[5] == 5:
                         redlist2[0] = 1
+                        yelN4[0] = 1
                         yelV2[0] = 1
                         yelH1[1] = 1                            
                         gameDisplay.blit(Yellow,(115,20))
@@ -1802,36 +1877,46 @@ def game_loop():
                     turn = 1
                     if redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 0:
                         redlist3[5] = 1
+                        yelP5[0] = 1
                         yelV3[5] = 1
                         yelH6[2] = 1
                         thread.start_new_thread(allThreadYel3, ('how',.5))
                         break                            
                     elif redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 1:
                         redlist3[4] = 1
+                        yelP4[1] = 1
+                        yelN1[2] = 1
                         yelV3[4] = 1
                         yelH5[2] = 1
                         thread.start_new_thread(fourThreadYel3, ('um',.5))
                         break
                     elif redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 2:
                         redlist3[3] = 1
+                        yelP3[2] = 1
+                        yelN2[2] = 1
                         yelV3[3] = 1
                         yelH4[2] = 1
                         thread.start_new_thread(threeThreadYel3, ('a',.5))
                         break
                     elif redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 3:
                         redlist3[2] = 1
+                        yelP2[2] = 1
+                        yelN3[2] = 1
                         yelV3[2] = 1
                         yelH3[2] = 1                            
                         thread.start_new_thread(twoThreadYel3, ('b',.5))
                         break 
                     elif redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 4:
                         redlist3[1] = 1
+                        yelP1[2] = 1
+                        yelN4[1] = 1
                         yelV3[1] = 1
                         yelH2[2] = 1                            
                         thread.start_new_thread(oneThreadYel3, ('b',.5))
                         break
                     elif redlist3[0] + redlist3[1] + redlist3[2] + redlist3[3] + redlist3[4] + redlist3[5] == 5:
                         redlist3[0] = 1
+                        yelN5[0] = 1
                         yelV3[0] = 1
                         yelH1[2] = 1                         
                         gameDisplay.blit(Yellow,(205,20))
@@ -1844,36 +1929,48 @@ def game_loop():
                     turn = 1
                     if redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 0:
                         redlist4[5] = 1
+                        yelP6[0] = 1
+                        yelN1[3] = 1
                         yelV4[5] = 1
                         yelH6[3] = 1
                         thread.start_new_thread(allThreadYel4, ('how',.5))
                         break                            
                     elif redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 1:
                         redlist4[4] = 1
+                        yelP5[1] = 1
+                        yelN2[3] = 1
                         yelV4[4] = 1
                         yelH5[3] = 1
                         thread.start_new_thread(fourThreadYel4, ('um',.5))
                         break
                     elif redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 2:
                         redlist4[3] = 1
+                        yelP4[2] = 1
+                        yelN3[3] = 1
                         yelV4[3] = 1
                         yelH4[3] = 1
                         thread.start_new_thread(threeThreadYel4, ('a',.5))
                         break
                     elif redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 3:
                         redlist4[2] = 1
+                        yelP3[3] = 1
+                        yelN4[2] = 1
                         yelV4[2] = 1
                         yelH3[3] = 1                            
                         thread.start_new_thread(twoThreadYel4, ('b',.5))
                         break 
                     elif redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 4:
                         redlist4[1] = 1
+                        yelP2[3] = 1
+                        yelN5[1] = 1
                         yelV4[1] = 1
                         yelH2[3] = 1
                         thread.start_new_thread(oneThreadYel4, ('b',.5))
                         break
                     elif redlist4[0] + redlist4[1] + redlist4[2] + redlist4[3] + redlist4[4] + redlist4[5] == 5:
                         redlist4[0] = 1
+                        yelP1[3] = 1
+                        yelN6[0] = 1
                         yelV4[0] = 1
                         yelH1[3] = 1                            
                         gameDisplay.blit(Yellow,(295,20))
@@ -1884,36 +1981,46 @@ def game_loop():
                     turn = 1
                     if redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 0:
                         redlist5[5] = 1
+                        yelN2[4] = 1
                         yelV5[5] = 1
                         yelH6[4] = 1
                         thread.start_new_thread(allThreadYel5, ('how',.5))
                         break                            
                     elif redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 1:
                         redlist5[4] = 1
+                        yelP6[1] = 1
+                        yelN3[4] = 1
                         yelV5[4] = 1
                         yelH5[4] = 1
                         thread.start_new_thread(fourThreadYel5, ('um',.5))
                         break
                     elif redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 2:
                         redlist5[3] = 1
+                        yelP5[2] = 1
+                        yelN4[3] = 1
                         yelV5[3] = 1
                         yelH4[4] = 1
                         thread.start_new_thread(threeThreadYel5, ('a',.5))
                         break
                     elif redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 3:
                         redlist5[2] = 1
+                        yelP4[3] = 1
+                        yelN5[2] = 1
                         yelV5[2] = 1
                         yelH3[4] = 1                            
                         thread.start_new_thread(twoThreadYel5, ('b',.5))
                         break 
                     elif redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 4:
                         redlist5[1] = 1
+                        yelP3[4] = 1
+                        yelN6[1] = 1
                         yelV5[1] = 1
                         yelH2[4] = 1                            
                         thread.start_new_thread(oneThreadYel5, ('b',.5))
                         break
                     elif redlist5[0] + redlist5[1] + redlist5[2] + redlist5[3] + redlist5[4] + redlist5[5] == 5:
                         redlist5[0] = 1
+                        yelP2[4] = 1
                         yelV5[0] = 1
                         yelH1[4] = 1                            
                         gameDisplay.blit(Yellow,(385,20))
@@ -1923,36 +2030,44 @@ def game_loop():
                     turn = 1
                     if redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 0:
                         redlist6[5] = 1
+                        yelN3[5] = 1
                         yelV6[5] = 1
                         yelH6[5] = 1
                         thread.start_new_thread(allThreadYel6, ('how',.5))
                         break                            
                     elif redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 1:
                         redlist6[4] = 1
+                        yelN4[4] = 1
                         yelV6[4] = 1
                         yelH5[5] = 1
                         thread.start_new_thread(fourThreadYel6, ('um',.5))
                         break
                     elif redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 2:
                         redlist6[3] = 1
+                        yelP6[2] = 1
+                        yelN5[3] = 1
                         yelV6[3] = 1
                         yelH4[5] = 1
                         thread.start_new_thread(threeThreadYel6, ('a',.5))
                         break
                     elif redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 3:
                         redlist6[2] = 1
+                        yelP5[3] = 1
+                        yelN6[2] = 1
                         yelV6[2] = 1
                         yelH3[5] = 1                            
                         thread.start_new_thread(twoThreadYel6, ('b',.5))
                         break 
                     elif redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 4:
                         redlist6[1] = 1
+                        yelP4[4] = 1
                         yelV6[1] = 1
                         yelH2[5] = 1                            
                         thread.start_new_thread(oneThreadYel6, ('b',.5))
                         break
                     elif redlist6[0] + redlist6[1] + redlist6[2] + redlist6[3] + redlist6[4] + redlist6[5] == 5:
                         redlist6[0] = 1
+                        yelP3[5] = 1
                         yelV6[0] = 1
                         yelH1[5] = 1                            
                         gameDisplay.blit(Yellow,(475,20))
@@ -1962,43 +2077,49 @@ def game_loop():
                     turn = 1
                     if redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 0:
                         redlist7[5] = 1
+                        yelN4[5] = 1
                         yelV7[5] = 1
                         yelH6[6] = 1
                         thread.start_new_thread(allThreadYel7, ('how',.5))
                         break                            
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 1:
                         redlist7[4] = 1
+                        yelN5[4] = 1
                         yelV7[4] = 1
                         yelH5[6] = 1
                         thread.start_new_thread(fourThreadYel7, ('um',.5))
                         break
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 2:
                         redlist7[3] = 1
+                        yelN6[3] = 1
                         yelV7[3] = 1
                         yelH4[6] = 1
                         thread.start_new_thread(threeThreadYel7, ('a',.5))
                         break
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 3:
                         redlist7[2] = 1
+                        yelP6[3] = 1
                         yelV7[2] = 1
                         yelH3[6] = 1                            
                         thread.start_new_thread(twoThreadYel7, ('b',.5))
                         break 
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 4:
                         redlist7[1] = 1
+                        yelP5[4] = 1
                         yelV7[1] = 1
                         yelH2[6] = 1
-                            
+                        
                         thread.start_new_thread(oneThreadYel7, ('b',.5))
                         break
                     elif redlist7[0] + redlist7[1] + redlist7[2] + redlist7[3] + redlist7[4] + redlist7[5] == 5:
                         redlist7[0] = 1
+                        yelP4[5] = 1
                         yelV7[0] = 1
                         yelH1[6] = 1                  
                         gameDisplay.blit(Yellow,(565,20))
                         break
-                    
-                    
+                
+                
                 elif event.key == pygame.K_F1:
                     game_loop()
                 
@@ -2013,5 +2134,5 @@ def game_loop():
         pygame.display.update()
         clock.tick(60)
         
-game_loop()    
+game_loop()
 pygame.quit()
